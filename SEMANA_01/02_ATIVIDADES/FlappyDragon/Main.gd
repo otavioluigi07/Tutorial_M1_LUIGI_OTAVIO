@@ -1,9 +1,10 @@
 extends Node # instancia a classe Node2D
 
-var status = 1
-var vscore = 0
-var x = 10 #é aqui que a silha acontece
-var y = 5 
+var status = 1 #Essa variável (status) funciona como uma fixa que aponta suas situação no game. Quando status = 1, você começa o jogo com o dragão parado normalmente. Quando status = 0, o jogo já começa com o GAME OVER. Sendo assim, funciona como uma "vida" do dragão. Entretanto, o código só funciona com 1 ou 0, qualquer outro número fará com que o jogo não funcione.
+var vscore = 0 #Essa variável (score) funciona como a soma dos seus pontos logo a primeira passagem do dragão. Também serve para reiniciar sua pontuação sempre que recomeçar o game, fazendo com que não haja soma entre as antigas pontuações. Se trocar para 10, quando o dragão passar pelo primeiro tronco terá sua pontuação aumentada para 10 automaticamente.
+var x = 3 #Essa variável (x) altera a velocidade do cenário no eixo X.
+var y = 3 #Essa variável (y) altera a "gravidade" do cenário, fazendo com que o dragão fique mais pesado e difícil de subir quando colocamos altos valores. Já pequenos valores introduzem a sensação de que o dragão está planando e caindo bem devagar.
+
 
 # executa essa função ao carregar o jogo
 func _ready():
@@ -41,11 +42,11 @@ func _process(delta):
 			
 		# se apertou seta para baixo, aumenta o valor de y (posição vertical) do dragão
 		if Input.is_action_pressed("ui_down"):
-			$dragon.position.y += 2
+			$dragon.position.y += 8 #velocidade do dragão no eixo y na decida 
 
 		# se apertou seta para cima, diminui o valor de y (posição vertical) do dragão
 		if Input.is_action_pressed("ui_up"):
-			$dragon.position.y -= 4
+			$dragon.position.y -= 8 #velocidade do dragão no eixo y na subida
 			
 	elif status == 0: # parado
 		
