@@ -5,7 +5,6 @@ var vscore = 0 #Essa variável (score) funciona como a soma dos seus pontos logo
 var x = 3 #Essa variável (x) altera a velocidade do cenário no eixo X.
 var y = 3 #Essa variável (y) altera a "gravidade" do cenário, fazendo com que o dragão fique mais pesado e difícil de subir quando colocamos altos valores. Já pequenos valores introduzem a sensação de que o dragão está planando e caindo bem devagar.
 
-
 # executa essa função ao carregar o jogo
 func _ready():
 	# oculta o "gameover"
