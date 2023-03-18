@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonte/Retro Gaming.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://cenario/b2c83621c90fdb61d0fa5bc7dc634cf2.png" type="Texture" id=2]
+[ext_resource path="res://agradecimentos.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="agradecimentos" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -34.0
+margin_top = -12.0
+margin_right = 1052.0
+margin_bottom = 637.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="B2C83621C90Fdb61D0Fa5Bc7Dc634Cf2" type="Sprite" parent="."]
+position = Vector2( 328, 84 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 55.0
+margin_top = 145.0
+margin_right = 1362.0
+margin_bottom = 492.0
+custom_fonts/font = SubResource( 1 )
+text = "Obrigado por jogar meu jogo \"Vitinho ta TV\". O tema que eu
+escolhi foi reparo. Como você pode ver, no decorrer do jogo
+vitinho tinha a tarefa de reparar a televisão de geraldo,
+um samurai louco da cabeça e apaixonado por BBB 23 - 
+e pelo FRED também.
+
+Como sou uma pessoa legal, disponibilizei de graça a expansão do jogo -
+Sr. Geraldo descobriu que o Playstation de Vitinho era pirata e estava
+quebrado. Geraldo não vai deixar barato...
+Então, se divirta com a continuação..."
+
+[node name="Button" type="Button" parent="."]
+margin_left = 384.0
+margin_top = 494.0
+margin_right = 585.0
+margin_bottom = 566.0
+text = "CONTINUAR..."
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

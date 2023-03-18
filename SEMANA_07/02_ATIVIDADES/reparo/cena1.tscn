@@ -1,0 +1,139 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://fonte/Retro Gaming.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://cena1.gd" type="Script" id=2]
+[ext_resource path="res://cenario/casa1.png" type="Texture" id=3]
+[ext_resource path="res://cenario/New Piskel (11).png" type="Texture" id=4]
+[ext_resource path="res://personagem/personage,.tscn" type="PackedScene" id=5]
+[ext_resource path="res://cenario/DALL·E 2023-03-16 20.46.45 - FAÇA um cenário de casas em pixels 2d.png" type="Texture" id=6]
+[ext_resource path="res://Area2D.gd" type="Script" id=7]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "New Piskel (11).png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 130, 93.5 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 19.5, 96.5 )
+
+[node name="cena1" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Dall·E2023-03-16204645-FaçAUmCenárioDeCasasEmPixels2d" type="Sprite" parent="."]
+position = Vector2( 510, 297.5 )
+scale = Vector2( 1, 0.608398 )
+texture = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 2097151, 0, 0, 2031616, 0, 0, 2031617, 0, 0, 2031618, 0, 0, 2031619, 0, 0, 2031620, 0, 0, 2031621, 0, 0, 2031622, 0, 0, 2031623, 0, 0, 2031624, 0, 0, 2031625, 0, 0, 2031626, 0, 0, 2031627, 0, 0, 2031628, 0, 0, 2031629, 0, 0, 2031630, 0, 0, 2031631, 0, 0, 2031632, 0, 0, 2031633, 0, 0, 2031634, 0, 0, 2031635, 0, 0, 2031636, 0, 0, 2031637, 0, 0, 2031638, 0, 0, 2031639, 0, 0, 2031640, 0, 0, 2031641, 0, 0, 2031642, 0, 0, 2031643, 0, 0, 2031644, 0, 0, 2031645, 0, 0, 2031646, 0, 0, 2031647, 0, 0, 2031648, 0, 0, 2031649, 0, 0, 2031650, 0, 0, 2031651, 0, 0, 2031652, 0, 0, 2031653, 0, 0, 2031654, 0, 0, 2031655, 0, 0, 2031656, 0, 0, 2031657, 0, 0, 2031658, 0, 0, 2031659, 0, 0, 2031660, 0, 0, 2031661, 0, 0, 2031662, 0, 0, 2031663, 0, 0, 2031664, 0, 0, 2031665, 0, 0, 2031666, 0, 0, 2031667, 0, 0, 2031668, 0, 0, 2031669, 0, 0, 2031670, 0, 0, 2031671, 0, 0, 2031672, 0, 0, 2031674, 0, 0, 2031675, 0, 0, 2031676, 0, 0, 2031677, 0, 0, 2031678, 0, 0 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 710.0
+margin_top = 101.0
+margin_right = 985.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 4 )
+text = "CASA DO SR.GERALDO"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 28.0
+margin_top = 54.0
+margin_right = 759.0
+margin_bottom = 138.0
+custom_fonts/font = SubResource( 4 )
+text = "TUTORIAL:
+USE AS SETAS DO TELCADO PARA SE MOVIMENTAR
+USE O MOUSE PARA INTERAGIR COM DESAFIOS E CONVERSAS"
+
+[node name="KinematicBody2D" parent="." groups=["personagem"] instance=ExtResource( 5 )]
+position = Vector2( -1673, -778 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="Casa1" type="Sprite" parent="Area2D"]
+position = Vector2( 900, 334 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 892, 403 )
+shape = SubResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 13.0
+margin_top = 427.0
+margin_right = 970.0
+margin_bottom = 591.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 15.0
+margin_top = 9.0
+margin_right = 961.0
+margin_bottom = 153.0
+custom_fonts/font = SubResource( 1 )
+text = "Olá! Sou o vitinho da TV. As pessoas me chamam por esse nome porquê
+falam que sou ótimo em reparos, principalmente de TVs, por conta da 
+minha espada mágica. Me ajude a reparar a televisão da casa do
+Sr.Geraldo, ela está louco para assitir o BBB 23.
+Vamos lááá´´aáááááá! "
+
+[node name="Button" type="Button" parent="ColorRect"]
+margin_left = 871.0
+margin_top = 111.0
+margin_right = 915.0
+margin_bottom = 142.0
+text = "IR"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -19, 409 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1043, 406 )
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_Button_pressed"]

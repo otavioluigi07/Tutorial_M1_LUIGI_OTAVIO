@@ -1,0 +1,128 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://cena3.gd" type="Script" id=1]
+[ext_resource path="res://fonte/Retro Gaming.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://cenario/kisspng-pixel-art-television-5b004793aab204.4979899315267449796992.png" type="Texture" id=3]
+[ext_resource path="res://musica/videoplayback.ogg" type="AudioStream" id=4]
+[ext_resource path="res://cenario/i+3Kl5.png" type="Texture" id=5]
+[ext_resource path="res://cenario/fioamarelo.png" type="Texture" id=6]
+[ext_resource path="res://cenario/fiovermelho.png" type="Texture" id=7]
+[ext_resource path="res://cenario/fioverrde.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="cena3" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="I+3Kl5" type="Sprite" parent="."]
+position = Vector2( 539, 323 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -80.0
+margin_top = -26.0
+margin_right = 1096.0
+margin_bottom = 658.0
+color = Color( 0, 0, 0, 0.796078 )
+
+[node name="Button" type="TextureButton" parent="."]
+margin_left = 42.0
+margin_top = 87.0
+margin_right = 288.0
+margin_bottom = 311.0
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Fioamarelo" type="Sprite" parent="."]
+visible = false
+position = Vector2( 384, 202.5 )
+scale = Vector2( 24.0625, 8.96875 )
+texture = ExtResource( 6 )
+
+[node name="Fioverrde" type="Sprite" parent="."]
+visible = false
+position = Vector2( 386.5, 299.5 )
+scale = Vector2( 24.2813, 14.3438 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 35.0
+margin_top = 38.0
+margin_right = 594.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 1 )
+text = "ESCOLHA O FIO AMARELO, VERDE E VERMELHO, 
+RESPECTIVAMENTE."
+
+[node name="Button2" type="TextureButton" parent="."]
+margin_left = 30.0
+margin_top = 321.0
+margin_right = 324.0
+margin_bottom = 530.0
+texture_normal = ExtResource( 8 )
+expand = true
+
+[node name="Button3" type="TextureButton" parent="."]
+margin_left = 529.0
+margin_top = 432.0
+margin_right = 803.0
+margin_bottom = 681.0
+texture_normal = ExtResource( 7 )
+expand = true
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+margin_left = 23.0
+margin_top = 376.0
+margin_right = 332.0
+margin_bottom = 498.0
+custom_fonts/font = SubResource( 2 )
+text = "ESCOLHA O FIO CERTO"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+margin_left = 533.0
+margin_top = 506.0
+margin_right = 803.0
+margin_bottom = 532.0
+custom_fonts/font = SubResource( 3 )
+text = "ESCOLHA O FIO CERTO"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+mix_target = 2
+
+[node name="Fiovermelho" type="Sprite" parent="."]
+visible = false
+position = Vector2( 796, 436 )
+rotation = -1.5708
+scale = Vector2( 11.0313, 12.3125 )
+texture = ExtResource( 7 )
+
+[node name="Kisspng-pixel-art-television-5B004793Aab2044979899315267449796992" type="Sprite" parent="."]
+position = Vector2( 828, 209 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 3 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Oliver-Tree-Miss-You-_Phonk-Remix_-_Legendado_-Tradução_-_64-kbps_.ogg-608d9cc3a0c2e66382cce9059f349d66.oggstr"
+
+[deps]
+
+source_file="res://musica/Oliver-Tree-Miss-You-_Phonk-Remix_-_Legendado_-Tradução_-_64-kbps_.ogg"
+dest_files=[ "res://.import/Oliver-Tree-Miss-You-_Phonk-Remix_-_Legendado_-Tradução_-_64-kbps_.ogg-608d9cc3a0c2e66382cce9059f349d66.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

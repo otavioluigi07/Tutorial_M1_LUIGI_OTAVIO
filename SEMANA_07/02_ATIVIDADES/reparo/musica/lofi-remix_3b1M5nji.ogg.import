@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lofi-remix_3b1M5nji.ogg-e288644727ebdee74a1f1150fafd2c02.oggstr"
+
+[deps]
+
+source_file="res://musica/lofi-remix_3b1M5nji.ogg"
+dest_files=[ "res://.import/lofi-remix_3b1M5nji.ogg-e288644727ebdee74a1f1150fafd2c02.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
